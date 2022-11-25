@@ -4,8 +4,8 @@ const getWord = async (word) => {
     console.log(output)
     let options = []
     for (let i=0; i < output.length; i++) {
-        let syn = output[i].meta ? (output[i].meta.syns[0] ? output[i].meta.syns[0][0] : null) : null
-        let ant = output[i].meta ? (output[i].meta.ants[0] ? output[i].meta.ants[0][0] : null) : null
+        let syn = output[i].meta ? (output[i].meta.syns[0] ? output[i].meta.syns[0][Math.floor(Math.random() * output[i].meta.syns[0].length)] : null) : null
+        let ant = output[i].meta ? (output[i].meta.ants[0] ? output[i].meta.ants[0][Math.floor(Math.random() * output[i].meta.ants[0].length)] : null) : null
         let def = output[i].shortdef[0]
         let pos = output[i].fl
         options.push({word, def, pos, syn, ant})
